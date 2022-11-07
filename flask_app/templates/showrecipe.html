@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'create.css')}}">
+    
+
+</head>
+<body>
+  
+    <div class="navbar-cont">
+        <h1>Welcome {{userinfo.first_name}}</h1>
+        <div class="right-nav">
+            <a class="back" href="/dashboard">Back to recipies</a>
+            <a class="log" href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="div-cont">
+        
+    {%for r in recipies %}
+        {%if r.user.id == recipie.user_id %}
+    <h1 class="posted">Posted By {{r.user.first_name}}</h1>
+    {%endif%}
+    {%endfor%}
+    <div class="inside-cont">
+        <h3 class="recn"> {{recipie.name}}</h3>
+        <div class="nam-contienr">
+            <h4>Description</h4> 
+            <p class="dec-dec"> {{recipie.description}}</p>
+        </div>
+        <h4 class="inst">Instructions</h4>
+        <p class="dec-dec">{{recipie.instructions}}</p>
+        <div class="yes-no-cont">
+            {%if recipie.cook_time:%}
+            <h6>Takes more then 30 mins</h6>
+            {%else%}
+            <h6>Takes 30 mins or less</h6>
+            {%endif%}
+        </div>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Convergence&family=Lato:wght@300;400;700;900&family=Mukta:wght@300;400;600;700;800&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static', filename = 'main.css')}}">
+        <title>Register form</title>
+    </head>
+    <body>
+        <h1>Become A new User</h1>
+        <div class="form">
+            <form action="/register/user" method="post">
+                <input name="email" type="text" autocomplete="off" placeholder=" " value="{{session['email']}}">
+                <label for="email">Email</label>
+
+                <input name="first_name" class="fir" type="text" autocomplete="off" placeholder="" value="{{session['first_name']}}">
+                <label class="labl" for="first_name">First name</label>
+
+                <input name="last_name" class="lst" type="text" autocomplete="off" placeholder=" " value="{{session['last_name']}}">
+                <label class="lstlbl" for="last_name">Last name</label>
+
+                <input name="password" class="pswlst" type="password" autocomplete="off" placeholder=" " >
+                <label class="pswlbl" for="password">Password</label>
+
+                <input name="confirm_password" class="pswlst2" type="password" autocomplete="off" placeholder=" " >
+                <label class="pswlbl2" for="password">Confirm Password</label>
+
+                <input class="pswlbl3" type="submit" value="SUBMIT">
+            </form>
+            <div class="error-dav">
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                {% if messages %}                            <!-- check if there are any messages -->
+                    {% for message in messages %}            <!-- loop through the messages -->
+            <p class="error">{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        </div>
+      </body>
+</html>

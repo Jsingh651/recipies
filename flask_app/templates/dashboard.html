@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'login.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'create.css')}}">
+
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+
+  <div class="navbar-cont">
+    <h1>Welcome {{user.first_name}}</h1>
+    <div class="right-nav">
+        <a class="back" href="/show/page">Create recipies</a>
+        <a class="log" href="/logout">Logout</a>
+    </div>
+</div>
+<div class="tablecont">
+  <h3 class="topmarin">All posted recipes</h3>
+  <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Under</th>
+            <th scope="col">Posted By</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for rec in recipies%}
+          <tr>
+            <td>{{rec.name}}</td>
+            {% if rec.cook_time:%}
+            <td>Yes</td>
+            {%else:%}
+            <td>No</td>
+            {%endif%}
+            <td>{{rec.user.first_name}}</td>
+            {%if rec.user.id == session['user_id']%}
+              <td><a class="link-table" href="/edit/recipe/{{rec.id}}">Edit</a> 
+                <a class="link-table" href="/delete/{{rec.id}}">| Delete</a>
+              <a class="link-table" href="/show/recipe/{{rec.id}}">| View Recipe</a>
+              </td>
+              {%else%}
+              <td><a class="link-table" href="/show/recipe/{{rec.id}}">View Recipe</a></td>
+              {%endif%}
+
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+</div>
+</body>
+</html>

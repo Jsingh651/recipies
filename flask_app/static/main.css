@@ -1,0 +1,127 @@
+body {
+    font-family: "Convergence", sans-serif;
+    /* height: 100vh; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background: #181f41;
+	background-size: 400% 400%;
+}
+h1{
+    font-size: 40px;
+    color: white;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+
+.form{
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    height: 300px;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+
+input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    border: 2px solid #e1e5ee;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    outline: none;
+    padding: 1.00rem;
+    background: none;
+}
+input:hover{
+    border-color:  #adffff;
+}
+input:focus{
+    border-color: #18ffff;
+}
+label{
+    position: absolute;
+    left: 1rem;
+    top: 0.8rem;
+    padding: 0 0.5rem;
+    color: white;
+    cursor: text;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    background: #181f41;
+    top: -0.5rem;
+    font-size: 0.8rem;
+    left: 0.8rem;
+}
+a{
+    text-decoration: none;
+}
+.fir{
+    margin-top: 120px;
+}
+.labl{
+    margin-top: 120px;
+}
+.lst{
+    margin-top: 220px;
+}
+.lstlbl{
+    margin-top: 220px;
+    top: -0.5rem;
+    font-size: 0.8rem;
+    left: 0.8rem;
+}
+.pswlst{
+margin-top: 320px;
+}
+.pswlbl{
+    margin-top: 320px;
+    top: -0.5rem;
+    font-size: 0.8rem;
+    left: 0.8rem;
+}
+
+.pswlst2{
+margin-top: 420px;
+
+}
+.pswlbl2{
+    margin-top: 420px;    
+    top: -0.5rem;
+    font-size: 0.8rem;
+    left: 0.8rem;
+}
+.pswlbl3{
+    width: 50%;
+    margin-top: 540px;
+    margin-left: 110px;
+    height: 20%;
+    background-color: white;
+    color: #060b23;
+}
+.pswlbl3:hover{
+    cursor: pointer;
+}
+.pswlbl3:active{
+    position: relative;
+    top: 4px;
+}
+.error{
+    font-size: 16px;
+    color: white;
+    margin-left: 30px;
+    text-align: center;
+}
+.error-dav{
+    position: absolute;
+    top: 600px;
+    width: 100%;
+
+}

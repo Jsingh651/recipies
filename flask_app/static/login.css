@@ -1,0 +1,179 @@
+html {
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+body {
+	/* background: linear-gradient(-45deg, #ef5c30, #e73c7e, #1a94c0, #15b08c); */
+    background: linear-gradient(-45deg, #013252, #241919, #33535e, #9f9f9f);
+	background-size: 400% 400%;
+	animation: gradient 20s ease infinite;
+	height: 100vh;
+    margin: 0;
+    font-family: "Convergence", sans-serif;
+}
+@keyframes gradient {
+	0% {background-position: 0% 50%;}
+	50% {background-position: 100% 50%;}
+	100% {background-position: 0% 50%;}
+}
+.topmarin{
+    position: relative;
+    top:70px;
+}
+
+.table{
+    margin-top: 80px;
+    position: relative;
+    width: 400px;
+    background: linear-gradient(-45deg, #013252, #286385, #33535e, #9f9f9f);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 4px;
+
+}
+.tablecont{
+    width: 800px;
+    margin: 0 auto;
+}
+.login-box {
+    position: absolute;
+    height: 380px;
+    top: 40%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+table{
+    margin-top: 120px;
+    text-align: center;
+
+
+}
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+
+.login-box a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow:
+    0 0 5px #03e9f4,
+    0 0 25px #03e9f4,
+    0 0 50px #03e9f4,
+       0 0 100px #03e9f4;
+}
+
+input::placeholder{
+    color: white;
+}
+.login-box a span {
+    position: absolute;
+    display: block;
+}
+
+
+.pswlbl3{
+    position: absolute;
+    width: 30%;
+    height: 38px;
+    border: 2px solid #e1e5ee;
+    border-radius: 0.5rem;
+    font-family: "Convergence", sans-serif;
+    font-size: inherit;
+    color: white;
+    outline: none;
+    background: none;
+    color: white;
+    margin-left: 90px;
+}
+.pswlbl3:hover{
+    cursor: pointer;
+    border-color:  #adffff;
+
+}
+.pswlbl3:focus{
+    border-color: #18ffff;
+}
+.d{
+    margin-top: 24px;
+    margin-left: 75px;
+
+}
+
+.erro2{
+    color: white;
+    padding-left: 68px;
+    padding-bottom: 6px;
+}
+.titletrex{
+    text-align: center;
+    color: white;
+}
+.btnnrw{
+    width: 10%;
+    height: 40px;
+    margin-top: 47.3%;
+    margin-left: 90%;
+}
+.btnnrw:active{
+position: relative;
+top: 5px;
+}
+.navbar-cont{
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'login.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'create.css')}}">
+    
+</head>
+
+<body>
+    <div class="navbar-cont">
+        <h1>Edit the Recipe</h1>
+        <div class="right-nav">
+            <a class="back" href="/dashboard">Back to recipies</a>
+            <a class="log" href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <div class=" form form2">
+        <form action="/update/recipe" method="post">
+            <input type="hidden" name="recipie_id" value="{{recipie.id}}">
+            <label class="labl" for="name">Name</label>
+            <input class="fir" name="name" type="text" autocomplete="off" placeholder=" " value="{{recipie.name}}">
+
+            <label class="description" for="description">Description</label>
+            <input name="description" class="description" type="text" autocomplete="off" placeholder="" value="{{recipie.description}}">
+
+            <label class="instructions" for="last_name">Instructions</label>
+            <textarea class="instru" name="instructions" cols="20" rows="20" id="instructions" > {{recipie.instructions}}</textarea>
+
+            <!-- <label for="">Date cooked/ made</label>
+            <input class="white" type="date" name="created_at" id=""> -->
+
+            
+            <h3 class="cook-time">Under 30 mins?</h3>
+            <div class="checkcontainet">
+                <input class="rad1"  type="radio" name="cook_time" id="inlineRadio1" value="1" checked>
+                <label class="lab1" for="inlineRadio1">Yes</label >
+                <input class="rad1"  type="radio" name="cook_time" id="inlineRadio1" value="0">
+                <label class="lab1" for="inlineRadio1">No</label>
+                <input class="pswlbl3 sub23" type="submit" value="SUBMIT">
+            </div>
+
+        </form>
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+        {% if messages %}                            <!-- check if there are any messages -->
+            {% for message in messages %}            <!-- loop through the messages -->
+    <p class="error">{{message}}</p>                   <!-- display each message in a paragraph tag -->
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</body>
+
+</html>
